@@ -3,79 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tailwind CSS Demo</title>
+  <title>Tailwind CSS Sample Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Tailwind config (optional)
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: '#3b82f6',
-          },
-        },
-      },
-    };
-  </script>
   <style>
-    /* Custom styles if needed */
+    @layer utilities {
+      .bg-gradient-primary {
+        background: linear-gradient(135deg, #4f46e5, #3b82f6);
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
-  <header class="p-6 flex justify-between items-center bg-white dark:bg-gray-800 shadow">
-    <h1 class="text-2xl font-bold text-primary">Tailwind CSS Demo</h1>
-    <button id="themeToggle" class="px-4 py-2 bg-primary text-white rounded hover:bg-blue-600 focus:outline-none">
-      ダークモード切替
-    </button>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-gradient-primary text-white py-6">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold">My Awesome Site</h1>
+      <p class="mt-2 text-lg">Tailwind CSSだけで作ったシンプルなページ</p>
+    </div>
   </header>
 
-  <main class="max-w-4xl mx-auto p-6">
-    <section class="my-8">
-      <h2 class="text-xl font-semibold mb-4">概要</h2>
-      <p class="mb-4">
-        このページは、Tailwind CSS と JavaScript を 1 枚の HTML ファイルにまとめたデモです。GitHub Pages でそのまま公開できます。
-      </p>
-      <button id="alertBtn" class="px-6 py-3 bg-primary text-white rounded hover:bg-blue-600 focus:outline-none">
-        アラートを表示
-      </button>
+  <main class="container mx-auto px-4 py-12">
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl font-semibold mb-4">Welcome!</h2>
+        <p class="mb-4">
+          これはGitHub Pagesで公開できる、1枚のHTMLファイルだけで構成されたサンプルです。Tailwind CSSを使ってデザインしています。
+        </p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>レスポンシブデザイン</li>
+          <li>シンプルなレイアウト</li>
+          <li>カスタムユーティリティクラス</li>
+        </ul>
+      </div>
+      <div class="flex justify-center">
+        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=400&q=80" alt="Sample Image" class="rounded-lg shadow-lg w-full max-w-sm">
+      </div>
     </section>
 
-    <section class="my-8">
-      <h2 class="text-xl font-semibold mb-4">カードレイアウト例</h2>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
-          <h3 class="font-bold mb-2">カード 1</h3>
-          <p class="text-sm">シンプルなカードコンポーネントです。</p>
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold mb-6 text-center">Features</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-bold mb-2">Fast</h3>
+          <p>Tailwindのユーティリティクラスで高速にスタイリング。</p>
         </div>
-        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
-          <h3 class="font-bold mb-2">カード 2</h3>
-          <p class="text-sm">Tailwind のユーティリティでレイアウト。</p>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-bold mb-2">Responsive</h3>
+          <p>モバイルファーストのレスポンシブデザイン。</p>
         </div>
-        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
-          <h3 class="font-bold mb-2">カード 3</h3>
-          <p class="text-sm">レスポンシブ対応も簡単です。</p>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-bold mb-2">Customizable</h3>
+          <p>カスタムユーティリティで柔軟に調整可能。</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="p-4 text-center bg-white dark:bg-gray-800">
-    <p class="text-sm">&copy; 2026 Demo Page</p>
+  <footer class="bg-gray-800 text-gray-300 py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2026 My Awesome Site. All rights reserved.</p>
+    </div>
   </footer>
-
-  <script>
-    // ダークモード切替
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-    });
-
-    // アラートボタン
-    const alertBtn = document.getElementById('alertBtn');
-    alertBtn.addEventListener('click', () => {
-      alert('ボタンがクリックされました！');
-    });
-  </script>
 </body>
 </html>
