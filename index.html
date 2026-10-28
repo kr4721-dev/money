@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (optional)
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* Custom styles if needed */
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <header class="p-6 flex justify-between items-center bg-white dark:bg-gray-800 shadow">
+    <h1 class="text-2xl font-bold text-primary">Tailwind CSS Demo</h1>
+    <button id="themeToggle" class="px-4 py-2 bg-primary text-white rounded hover:bg-blue-600 focus:outline-none">
+      ダークモード切替
+    </button>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6">
+    <section class="my-8">
+      <h2 class="text-xl font-semibold mb-4">概要</h2>
+      <p class="mb-4">
+        このページは、Tailwind CSS と JavaScript を 1 枚の HTML ファイルにまとめたデモです。GitHub Pages でそのまま公開できます。
+      </p>
+      <button id="alertBtn" class="px-6 py-3 bg-primary text-white rounded hover:bg-blue-600 focus:outline-none">
+        アラートを表示
+      </button>
+    </section>
+
+    <section class="my-8">
+      <h2 class="text-xl font-semibold mb-4">カードレイアウト例</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+          <h3 class="font-bold mb-2">カード 1</h3>
+          <p class="text-sm">シンプルなカードコンポーネントです。</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+          <h3 class="font-bold mb-2">カード 2</h3>
+          <p class="text-sm">Tailwind のユーティリティでレイアウト。</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+          <h3 class="font-bold mb-2">カード 3</h3>
+          <p class="text-sm">レスポンシブ対応も簡単です。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-4 text-center bg-white dark:bg-gray-800">
+    <p class="text-sm">&copy; 2026 Demo Page</p>
+  </footer>
+
+  <script>
+    // ダークモード切替
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // アラートボタン
+    const alertBtn = document.getElementById('alertBtn');
+    alertBtn.addEventListener('click', () => {
+      alert('ボタンがクリックされました！');
+    });
+  </script>
+</body>
+</html>
